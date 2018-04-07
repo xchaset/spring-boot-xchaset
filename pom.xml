@@ -15,7 +15,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
-		<relativePath/>
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -34,28 +34,30 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>1.3.2</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
 		<dependency>
-		    <groupId>com.alibaba</groupId>
-		    <artifactId>fastjson</artifactId>
-		    <version>1.2.47</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-swagger2</artifactId>
-		    <version>2.2.2</version>
-		</dependency>
-		<dependency>
-		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-swagger-ui</artifactId>
-		    <version>2.2.2</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.47</version>
 		</dependency>
 
 		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+
+		<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 
+			<scope>runtime</scope> </dependency> -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -63,14 +65,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
-		   <!--生成代码插件-->
-    <dependency>
-        <groupId>org.mybatis.generator</groupId>
-        <artifactId>mybatis-generator-core</artifactId>
-        <version>1.3.2</version>
-        <type>jar</type>
-    </dependency>
+
+		<!--生成代码插件 -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-core</artifactId>
+			<version>1.3.2</version>
+			<type>jar</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -78,20 +80,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				</plugin>
-			
+			</plugin>
+
 			<plugin>
 				<groupId>org.mybatis.generator</groupId>
 				<artifactId>mybatis-generator-maven-plugin</artifactId>
 				<version>1.3.2</version>
-					<dependencies>
-						<dependency>
-								<groupId>org.postgresql</groupId>
-								<artifactId>postgresql</artifactId>
-								<version>9.4.1212</version>
-								<scope>runtime</scope>
-							</dependency>
-					</dependencies>
+				<dependencies>
+					<!-- <dependency> <groupId>org.postgresql</groupId> <artifactId>postgresql</artifactId> 
+						<version>9.4.1212</version> <scope>runtime</scope> </dependency> -->
+
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>6.0.5</version>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId><!--官网给出的配置，没有配置groupId,这里也不配置 -->
@@ -114,7 +119,7 @@
 					<appendAssemblyId>false</appendAssemblyId><!--设为false,防止war包名加入assembly.xml中的id -->
 				</configuration>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 

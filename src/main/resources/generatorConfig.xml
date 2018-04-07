@@ -13,8 +13,11 @@
 			<property name="suppressAllComments" value="true" />
 		</commentGenerator>
 		<!--数据库url、用户名和密码 -->
-		<jdbcConnection driverClass="org.postgresql.Driver"
+		<!-- <jdbcConnection driverClass="org.postgresql.Driver"
 			connectionURL="jdbc:postgresql://localhost:5432/postgres" userId="postgres" password="xchaset">
+		</jdbcConnection> -->
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/xchaset_uc?useUnicode=true&amp;characterEncoding=UTF-8&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC&amp;nullNamePatternMatchesAll=true" userId="root" password="xchaset">
 		</jdbcConnection>
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
@@ -33,7 +36,15 @@
 			targetPackage="mybatis" targetProject="src\main\resources">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-		<table schema="public" tableName="student" domainObjectName="User"
+		<table  tableName="province" domainObjectName="ProvincePO"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+		<table  tableName="city" domainObjectName="CityPO"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false" />
+		<table  tableName="area" domainObjectName="AreaPO"
 			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />
