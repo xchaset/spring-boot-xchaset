@@ -17,4 +17,8 @@ BindingResult ，并在方法中判断如果 result.hasErrors为true,则抛出�
 6.@JSONField 如果参数和VO对象的值不同可以通过@JSONField进行设置
 
 7.RequestBodyAdvice 如果想对http请求的消息进行提前处理可以通过实现RequestBodyAdvice，并重写方法，栗子：对加密的http信息解密后发送给controller.
+  同理：ResponseBodyAdvice 如果要对返回参数进行加密，可实现ResponseBodyAdvice，并实现其中的方法 。栗子：对返回参数进行解密。
+  使用@RestControllerAdvice构造切面
+
+
   
